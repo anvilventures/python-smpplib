@@ -66,6 +66,7 @@ def gsm_encode(plaintext):
 # Add new entry here should you need to use another encoding.
 ENCODINGS = {
     consts.SMPP_ENCODING_DEFAULT: (gsm_encode, consts.SEVENBIT_LENGTH, consts.SEVENBIT_PART_SIZE),
+    consts.SMPP_ENCODING_BINARY: (lambda b:b, consts.EIGHTBIT_LENGTH, consts.EIGHTBIT_PART_SIZE),
     consts.SMPP_ENCODING_ISO88591: (lambda text: text.encode('iso-8859-1'), consts.EIGHTBIT_LENGTH, consts.EIGHTBIT_PART_SIZE),
     consts.SMPP_ENCODING_ISO10646: (lambda text: text.encode('utf-16-be'), consts.UCS2_LENGTH, consts.UCS2_PART_SIZE),
 }
